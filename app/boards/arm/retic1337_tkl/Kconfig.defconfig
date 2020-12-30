@@ -1,0 +1,17 @@
+# retic1337_tkl board configuration
+
+if BOARD_RETIC1337_TKL
+
+config I2C
+	default y
+
+config USB_NRFX
+	default y
+
+config USB_DEVICE_STACK
+	default y
+
+config BT_CTLR
+	default BT
+
+endif # BOARD_RETIC1337_TKL
