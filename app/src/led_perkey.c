@@ -6,8 +6,8 @@
 #include <sys/__assert.h>
 #include <drivers/kscan.h>
 #include <zmk/matrix_transform.h>
-#include <zmk/event-manager.h>
-#include <zmk/events/position-state-changed.h>
+#include <zmk/event_manager.h>
+#include <zmk/events/position_state_changed.h>
 #include <drivers/led.h>
 #include <logging/log.h>
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
