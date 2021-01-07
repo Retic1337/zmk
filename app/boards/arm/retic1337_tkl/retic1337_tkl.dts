@@ -56,6 +56,18 @@
        , <&gpio0 23 GPIO_ACTIVE_HIGH>
       ;
   };
+  	encoder: encoder {
+		compatible = "alps,ec11";
+		label = "ENCODER";
+		a-gpios = <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+		b-gpios = <&gpio0 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+		resolution = <3>;
+		status = "okay";
+	};
+	sensors {
+		compatible = "zmk,keymap-sensors";
+		sensors = <&encoder>;
+	};
   leds {
   	compatible = "gpio-leds";
   	led0_blue: led_0 {
@@ -105,7 +117,8 @@
 	compatible = "nordic,nrf-uart";
 	current-speed = <115200>;
 	status = "okay";
-	tx-pin = <13>;
+	//tx-pin = <13>;
+	tx-pin = <20>;
 	rx-pin = <32>;
 	rts-pin = <2>;
 	cts-pin = <3>;

@@ -26,7 +26,7 @@ void main(void) {
         return;
     }
 #ifdef CONFIG_IS31FL3733
-    led_perkey_init();
+    led_perkey_init(ZMK_KSCAN_DEV);
 #endif /* CONFIG_IS31fl3733 */
 #ifdef CONFIG_ZMK_DISPLAY
     zmk_display_init();
