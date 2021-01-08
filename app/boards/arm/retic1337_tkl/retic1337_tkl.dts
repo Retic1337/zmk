@@ -59,10 +59,15 @@
   	encoder: encoder {
 		compatible = "alps,ec11";
 		label = "ENCODER";
-		a-gpios = <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-		b-gpios = <&gpio0 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-		resolution = <3>;
-		status = "okay";
+		a-gpios = <&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+		b-gpios = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+		resolution = <2>;
+		status = "disabled";
+	};
+	ext-power {
+		compatible = "zmk,ext-power-generic";
+		label = "EXT_POWER";
+		control-gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>;
 	};
 	sensors {
 		compatible = "zmk,keymap-sensors";
@@ -117,8 +122,7 @@
 	compatible = "nordic,nrf-uart";
 	current-speed = <115200>;
 	status = "okay";
-	//tx-pin = <13>;
-	tx-pin = <20>;
+	tx-pin = <13>;
 	rx-pin = <32>;
 	rts-pin = <2>;
 	cts-pin = <3>;
